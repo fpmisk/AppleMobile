@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847A2C9D1BAC95EB007826F1 /* Leaf.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A2C9C1BAC95EB007826F1 /* Leaf.m */; };
 		D03DE9961BAB2433001E455B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DE9951BAB2433001E455B /* main.m */; };
 		D03DE9991BAB2433001E455B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DE9981BAB2433001E455B /* AppDelegate.m */; };
 		D03DE99C1BAB2433001E455B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03DE99B1BAB2433001E455B /* ViewController.m */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		847A2C9B1BAC95EB007826F1 /* Leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leaf.h; sourceTree = "<group>"; };
+		847A2C9C1BAC95EB007826F1 /* Leaf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leaf.m; sourceTree = "<group>"; };
 		D03DE9901BAB2432001E455B /* AppleMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03DE9941BAB2433001E455B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03DE9951BAB2433001E455B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 		D03DE9921BAB2432001E455B /* AppleMobile */ = {
 			isa = PBXGroup;
 			children = (
+				847A2C9B1BAC95EB007826F1 /* Leaf.h */,
+				847A2C9C1BAC95EB007826F1 /* Leaf.m */,
 				D03DE9C01BAB2BE6001E455B /* Fruit.h */,
 				D03DE9B91BAB2555001E455B /* Apple.h */,
 				D03DE9BA1BAB2555001E455B /* Apple.m */,
@@ -236,6 +241,7 @@
 				D03DE9BE1BAB2555001E455B /* Apple.m in Sources */,
 				D03DE99C1BAB2433001E455B /* ViewController.m in Sources */,
 				D03DE9991BAB2433001E455B /* AppDelegate.m in Sources */,
+				847A2C9D1BAC95EB007826F1 /* Leaf.m in Sources */,
 				D03DE9BF1BAB2555001E455B /* AppleTree.m in Sources */,
 				D03DE9961BAB2433001E455B /* main.m in Sources */,
 			);
@@ -428,6 +434,7 @@
 				D03DE9B51BAB2433001E455B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D03DE9B61BAB2433001E455B /* Build configuration list for PBXNativeTarget "AppleMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +443,7 @@
 				D03DE9B81BAB2433001E455B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
