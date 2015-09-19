@@ -52,8 +52,8 @@
 }
 -(void) grow
 {
-    int countAddApple = arc4random()%6;
-    int countAddLeaf = arc4random()%6;
+    int countAddApple = arc4random()%6 + 1;
+    int countAddLeaf = arc4random()%6 + 1;
     
     for(int i = 0; i < countAddApple; ++i)
     {
@@ -74,8 +74,8 @@
 }
 -(void) shake
 {
-    int countDropApple = arc4random()%6;
-    int countDropLeaf = arc4random()%6;
+    int countDropApple = arc4random()%6 + 1;
+    int countDropLeaf = arc4random()%6 + 1;
     NSUInteger countAppleInArray = [[self arrayOfApple] count];
     NSUInteger countLeafInArray = [[self arrayOfLeaf] count];
     
