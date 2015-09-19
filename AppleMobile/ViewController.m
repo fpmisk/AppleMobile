@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton *shakeButton;
 @property (weak, nonatomic) IBOutlet UIButton *growButton;
 @property (weak, nonatomic) IBOutlet UILabel *shakeLabel;
@@ -18,16 +19,27 @@
 @end
 
 @implementation ViewController
-- (IBAction)growButtonAction:(id)sender {
+- (IBAction)growButtonAction:(id)sender
+{
+    AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[appDelegate appleTree] grow];
+    [[self growLabel] setText: [[[appDelegate appleTree] countOfApple] stringValue]];
 }
-- (IBAction)shakeButtonAction:(id)sender {
+- (IBAction)shakeButtonAction:(id)sender
+{
+    AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    int numberOfFallenApples = [[[appDelegate appleTree] countOfApple] intValue];
+    [[appDelegate appleTree] shake];
+    numberOfFallenApples -= [[[appDelegate appleTree] countOfApple] intValue];
+    [[self shakeLabel] setText: [[[NSNumber alloc] initWithInt: numberOfFallenApples] stringValue]];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //((AppDelegate *)[[UIApplication sharedApplication] delegate]).appleTree
-    //[[self shakeLabel] setText: ];
+    AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[self shakeLabel] setText: @"0"];
+    [[self growLabel] setText: [[[appDelegate appleTree] countOfApple] stringValue]];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
