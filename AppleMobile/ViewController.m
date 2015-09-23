@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UIButton *shakeButton;
 @property (weak, nonatomic) IBOutlet UIButton *growButton;
 @property (weak, nonatomic) IBOutlet UILabel *shakeLabel;
@@ -22,8 +23,11 @@
 - (IBAction)growButtonAction:(id)sender
 {
     AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    int numberOfGrownApples = [[[appDelegate appleTree] countOfApple] intValue];
     [[appDelegate appleTree] grow];
-    [[self growLabel] setText: [[[appDelegate appleTree] countOfApple] stringValue]];
+    numberOfGrownApples = [[[appDelegate appleTree] countOfApple] intValue] - numberOfGrownApples;
+    [[self growLabel] setText: [[[NSNumber alloc] initWithInt: numberOfGrownApples] stringValue]];
+    [[self totalLabel] setText: [[[appDelegate appleTree] countOfApple] stringValue]];
 }
 - (IBAction)shakeButtonAction:(id)sender
 {
@@ -32,6 +36,7 @@
     [[appDelegate appleTree] shake];
     numberOfFallenApples -= [[[appDelegate appleTree] countOfApple] intValue];
     [[self shakeLabel] setText: [[[NSNumber alloc] initWithInt: numberOfFallenApples] stringValue]];
+    [[self totalLabel] setText: [[[appDelegate appleTree] countOfApple] stringValue]];
 }
 
 - (void)viewDidLoad {
@@ -39,7 +44,8 @@
     
     AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [[self shakeLabel] setText: @"0"];
-    [[self growLabel] setText: [[[appDelegate appleTree] countOfApple] stringValue]];
+    [[self growLabel] setText: @"0"];
+    [[self totalLabel] setText: [[[appDelegate appleTree] countOfApple] stringValue]];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
